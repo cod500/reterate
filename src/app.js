@@ -69,7 +69,7 @@ app.use((req, res, next) => {
   next();
 })
 
-//Load routers
+//Load app routers
 const indexRouter = require('./routers/index');
 const userRouter = require('./routers/user');
 const restaurantRouter = require('./routers/restaurant');
