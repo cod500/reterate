@@ -1,0 +1,51 @@
+<div class="container">
+	<div class="container page-container">
+		<br><br>
+		<div class="row">
+			{{#if companies}}
+			{{#each companies}}
+			<div class="col-xl-3 col-lg-3 col-md-4 col-12">
+				<figure class="user-card">
+					{{#if image}}
+					<img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
+					{{else}}
+					<img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
+					{{/if}}
+					<h5>{{name}}</h5>
+					<p class="text-truncate">{{description}}</p>
+					<ul class="contacts">
+						<li>
+							<a href="https://www.google.com/maps/place/{{address}},+{{state}}+{{country}}"
+								target="_blank">
+								{{address}}<br>
+								{{state}}, {{country}}
+							</a>
+						</li>
+					</ul>
+					<div>
+						<span class="star" data-score={{rating}}></span>
+						<a href="/restaurant/sort/{{id}}/recent"><span class="badge badge-pill"></span><button
+								class="btn btn-warning btn-sm">See Reviews</button></span></a>
+					</div>
+
+				</figure>
+			</div>
+			{{/each}}
+			{{else}}
+		</div>
+		<h2 class="text-center">No Matching Results</h2>
+		{{/if}}
+
+		{{#if companies}}
+		<div class="container text-center">
+			<nav class="" role="navigation">
+
+				<a class="newer-posts" href="/restaurants/{{method}}/?page={{previous}}">{{getPrev}}</a>
+
+				<span class="page-number"> &nbsp Page {{page}} of {{getPages companies}} &nbsp</span>
+				<a class="older-posts" href="/restaurants/{{method}}/?page={{next}}"> {{getNext}}</a>
+			</nav>
+		</div>
+		{{/if}}
+
+	</div>

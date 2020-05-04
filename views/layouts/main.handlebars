@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Restaurate</title>
+    <link rel="icon" type="image/x-icon" href="/images/food.png" />
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/simple.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Noto+Sans&display=swap" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="http://malsup.github.com/jquery.form.js"></script> 
+
+    <!-- Raty -->
+    <script src="/js/jquery.raty.js"></script>
+
+    <!-- Bootstrap and Local JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="/js/sorting.js"></script>
+    <script src="/js/star-rating.js"></script>
+    
+
+
+
+</head>
+
+<body>
+    {{>_header}}
+    <div class="container-fluid">
+        <div class="main_body">
+            <br><br>
+            {{>_search-bar}}
+            <br>
+            <div id="success_msg"></div>
+            <div id="error_msg"></div>
+            {{>_msg}}
+            {{{body}}}
+        </div>
+    </div>
+
+    <div class="container">
+        {{>_footer}}
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{
+  "name": "Rating",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "env-cmd -f ./env/dev.env nodemon src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^7.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cookie-parser": "^1.4.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.4.0",
+    "method-override": "^3.0.0",
+    "moment": "^2.25.1",
+    "mongoose": "^5.9.6",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "uuidv1": "^1.6.14"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "env-cmd": "^10.1.0",
+    "handlebars": "^4.5.0"
+  }
+}

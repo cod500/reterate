@@ -1,0 +1,128 @@
+body {
+    overflow-x: hidden;
+    background: #fefefe;
+    font-family: 'Noto Sans', sans-serif;
+ }
+
+ a{
+     text-decoration: none !important;
+ }
+
+ ul li {
+    list-style-type: none;
+}
+
+ ul.nav li {
+    text-align: center;
+ }
+
+ .fas.btn {
+    font-weight:900;
+  }
+
+ /* Banner */
+ .food-banner {
+    background: linear-gradient(
+      rgba(0, 0, 0, .1),
+      rgba(0, 0, 0, .2)),
+      url('../images/plate.jpg') 50% / cover fixed;
+    height: 100%;
+    width:100%
+    padding: 1.5em;
+  }
+
+  .resraurant-banner {
+    background: linear-gradient(
+      rgba(0, 0, 0, .7),
+      rgba(0, 0, 0, .2));
+    height: 100%;
+    padding: 1.5em;
+  }
+
+ .logo{
+    font-family: 'Luckiest Guy', cursive;
+    color: #000000;
+    text-shadow: rgb(255, 255, 255) 2px 0px 0px, rgb(255, 255, 255) 1.75517px 0.958851px 0px, rgb(255, 255, 255) 1.0806px 1.68294px 0px, rgb(255, 255, 255) 0.141474px 1.99499px 0px, rgb(255, 255, 255) -0.832294px 1.81859px 0px, rgb(255, 255, 255) -1.60229px 1.19694px 0px, rgb(255, 255, 255) -1.97998px 0.28224px 0px, rgb(255, 255, 255) -1.87291px -0.701566px 0px, rgb(255, 255, 255) -1.30729px -1.5136px 0px, rgb(255, 255, 255) -0.421592px -1.95506px 0px, rgb(255, 255, 255) 0.567324px -1.91785px 0px, rgb(255, 255, 255) 1.41734px -1.41108px 0px, rgb(255, 255, 255) 1.92034px -0.558831px 0px;
+}
+
+/* Restaurant cards */
+.page-container{
+margin-top:40px;    
+}
+
+figure.user-card {
+    background: #ffffff;
+    padding: 20px;
+    border-top: 3px solid #f2f2f2;
+    border: 1px solid #e1e5f1;
+    text-align: center;
+}
+
+
+figure.user-card .profile {
+    border-radius: 5px;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+
+figure.user-card p {
+    margin: 0;
+    padding: 0 0 15px 0;
+    color: #8796af;
+    line-height: 150%;
+    font-size: .85rem;
+}
+
+figure.user-card ul.contacts {
+    margin: 0;
+    padding: 0 0 15px 0;
+    line-height: 150%;
+    font-size: .85rem;
+}
+
+figure.user-card ul.contacts li {
+    padding: .2rem 0;
+}
+
+figure.user-card ul.contacts li a {
+    color: #5a99ee;
+}
+
+figure.user-card ul.contacts li a i {
+    min-width: 36px;
+    float: left;
+    font-size: 1rem;
+}
+
+figure.user-card ul.contacts li:last-child a {
+    color: #ff5000;
+}
+
+.user-restaurant-listing{
+    width: 100%;
+    height: 100px;
+}
+
+/* User cards */
+.img-user-rating{
+    width: 100px;
+    height: 100px;
+}
+
+.thumbnail{
+    width: 200px;
+    height: 200px;
+}
+
+/* Star imageon review page*/
+#star_rating img{
+    width: 50px;
+    height: 50px;
+}
+
+
+
+
+

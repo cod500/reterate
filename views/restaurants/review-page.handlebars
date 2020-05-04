@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8 col-lg-8 col-xl-6">
+            <div class="row">
+                <div class="col text-center">
+                    <h1>{{company.name}} Review</h1>
+                    <p class="text-h3">Share your opinion</p>
+                </div>
+            </div>
+            <form method="POST" action="/restaurant/review/{{company.id}}" enctype="multipart/form-data">
+                <input class="form-control" id="id" value="{{company.id}}" type="hidden">
+                <div class="form-group ">
+                    <label for="">Rating</label>
+                    <div class="col-sm-12" id="star_rating">
+                        <img id="1_star" src="/images/star_off.png" alt="1" title="Bad">
+                        <img id="2_star" src="/images/star_off.png" alt="2" title="Poor">
+                        <img id="3_star" src="/images/star_off.png" alt="3" title="Fair">
+                        <img id="4_star" src="/images/star_off.png" alt="4" title="Good">
+                        <img id="5_star" src="/images/star_off.png" alt="5" title="Excellent">
+
+                        <span id="showTitle"></span>
+                    </div>
+
+                </div>
+
+                <div class="form-group ">
+                    <label for="">Review</label>
+                    <textarea name="review" id="review" rows="8" cols="80" class="form-control"></textarea>
+                </div>
+                <small>Add an image?</small>
+                <div class="form-group">
+                    <input name="image" type="file" id="review-form">
+                </div>
+                <div class="row justify-content-start mt-4">
+                    <div class="col">
+                        <input type="button" class="btn btn-dark mt-4" id="rate" value="Submit">
+                    </div>
+                    <a href="/restaurants"><input type="button" class="btn btn-secondary mt-4" value="Cancel"></a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

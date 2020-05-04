@@ -1,0 +1,126 @@
+<div class="container">
+    <!-- Header -->
+    <header class="py-5 mb-5 resraurant-banner"
+        style="background-image: url('/restaurant/image/{{company.id}}'); background-repeat: no-repeat; background-size: contain; background-position: center;">
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <div class="col-lg-12">
+                    <h1 class="display-4 text-white mt-5 mb-2"></h1>
+                    <div class="col-sm-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a href="" data-target="#info" data-toggle="tab" class="nav-link active">Information</a>
+            </li>
+            <li class="nav-item">
+                <a href="" data-target="#photos" data-toggle="tab" class="nav-link">Photos</a>
+            </li>
+        </ul>
+        <br>
+        <div class="tab-content">
+            <div class="tab-pane active" id="info">
+                <div class="row">
+                    <div class="col-md-8 mb-5">
+                        <h2 class="font-weight-bold">{{company.name}}</h2>
+                        <small>$$. {{company.type}}</small>
+                        <hr>
+                        <p>{{company.description}}</p>
+
+                        <a class="btn btn-dark btn-lg" href="/restaurant/review/{{company.id}}">Rate this Restaurant
+                            &raquo;</a>
+                    </div>
+                    <div class="col-md-4 mb-5">
+                        <h2 class="font-weight-bold">Contact Us</h2>
+                        <hr>
+                        <address>
+                            <strong>{{company.name}}</strong>
+                            <br>{{company.address}}
+                            <br>{{company.city}}, {{company.state}}, {{company.country}}
+                            <br>
+                        </address>
+                        <address>
+                            <abbr title="Phone">Phone number:</abbr>
+                            {{company.phone}}
+                            <br>
+                            <abbr title="Email">Website:</abbr>
+                            <a href="#">{{company.website}}</a>
+                        </address>
+                        <div class="col-sm-6 p-0">
+                            <div>
+                                <h4>Rating</h4>
+                                <h4>{{company.rating}}/ 5</h4>
+                                <span class="star" data-score={{company.rating}}></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>"We Are Offering Take-Out Orders - You Can
+                    Also Order From Us with Uber Eats for Delivery!
+                    Thank You! We Appreciate Your Business."
+                </div>
+                <hr>
+
+                <h3>{{company.name}} has {{ratings.length}} Reviews</h3>
+                <br><br>
+                <label for="sort-restaurant">Sort by:</label>
+                <select id="sort-restaurant">
+                    <option>Select...</option>
+                    <option class={{company.id}}>Most Recent</option>
+                    <option class='{{company.id}}'>Highest Rating</option>
+                    <option class='{{company.id}}'>Lowest Rating</option>
+                </select>
+                <br><br>
+
+                {{#each ratings}}
+                <div class="row">
+                    <div class="col-sm-3">
+                        <img src="/user/image/{{user.id}}" class="img-user-rating rounded-circle z-depth-2">
+                        <div class="review-block-name"><a href="/user/profile/{{user.id}}">{{user.name}}</a></div>
+                        <div class="review-block-date">{{formatDate date}}<br /></div>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="review-block-rate">
+                            <span class="star" data-score={{rating}}></span>
+                        </div>
+                        <div class="review-block-description">{{review}}</div>
+                        {{#if image}}
+                        <a href="/restaurant/review/image/{{id}}" target="_blank"><img
+                                class="thumbnail img-thumbnail rounded" src="/restaurant/review/image/{{id}}"></a>
+                        {{/if}}
+                        <div class="mt-2 helpful-{{id}}"><input type="button" class="btn btn-secondary helpful-btn"
+                                id="{{id}}" value="Helpful"></div>
+                        <hr>
+                    </div>
+                </div>
+                <br>
+                {{/each}}
+            </div>
+
+            <!-- /.container -->
+            <div class="tab-pane" id="photos">
+                <div class="container">
+                    <div class="row text-center text-lg-left">
+                        {{#each ratings}}
+                        {{#if image}}
+                        <div class="col-lg-3 col-md-4 col-12">
+                            <a href="/restaurant/review/image/{{id}}" target="_blank" class="d-block mb-4 h-100">
+                                <img class="img-fluid thumbnail img-thumbnail rounded"
+                                    src="/restaurant/review/image/{{id}}">
+                            </a>
+                        </div>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->

@@ -1,0 +1,73 @@
+<div class="jumbotron food-banner mask pattern-3">
+    <br><br>
+    <h1 class="display-4 logo text-center">Restaurate <i class="fa fa-cutlery"></i></h1>
+    <br><br>
+</div>
+
+<div class="container">
+    <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">Add Restaurant</h4>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <h1 class="card-title"><i class="fa fa-plus"></i><small class="text-muted"></small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>Add a New Restaurant Listing. </li>
+                    <li>Be the First to Write a Review!</li>
+                </ul>
+                <a href="/restaurant/add"><button type="button"
+                        class="align-self-end btn btn-lg btn-block btn-outline-dark" style="margin-top: auto;">Add
+                        New Restaurant</button></a>
+            </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-0 font-weight-normal">View All</h4>
+            </div>
+            <div class="card-body d-flex flex-column">
+                <h1 class="card-title"><i class="fa fa-star"></i><small class="text-muted"></small>
+                </h1>
+                <ul class="list-unstyled mt-3 mb-4">
+                    <li>View All Current Restaurant Listings.</li>
+                    <li>Rate and Review Restaurant Listings.</li>
+                </ul>
+                <a href="/restaurants/recent"><button class="btn btn-lg btn-block btn-dark" >View Restaurants to Rate</button></a>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <h4 class="text-center">Recently Added Restaurants</h4>
+    <hr>
+    <div class="row">
+        {{#each companies}}
+        <div class="col-xl-3 col-lg-3 col-md-4 col-12">
+            <figure class="user-card">
+                {{#if image}}
+                <img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
+                {{else}}
+                <img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
+                {{/if}}
+                <h5>{{name}}</h5>
+                <p class="text-truncate">{{description}}</p>
+                <ul class="contacts">
+                    <li>
+                        <a href="https://www.google.com/maps/place/{{address}},+{{state}}+{{country}}" target="_blank">
+                            {{address}}<br>
+                            {{state}}, {{country}}
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <span class="star" data-score={{rating}}></span>
+                    <a href="/restaurant/sort/{{id}}/recent"><span class="badge badge-pill"></span><button
+                            class="btn btn-warning btn-sm">See Reviews</button></span></a>
+                </div>
+
+            </figure>
+        </div>
+        {{/each}}
+    </div>
+
+    
