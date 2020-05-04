@@ -85,7 +85,7 @@ app.get('/*', (req, res) =>{
 })
 
 
-const port = 3000 || process.env.PORT
-app.listen('3000', () => {
+const port = process.env.PORT
+app.listen(port, () => {
   console.log(`Connected on port ${port}`)
 })
