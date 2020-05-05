@@ -1,6 +1,6 @@
 <div class="container">
     <!-- Header -->
-    <header class="py-5 mb-5 resraurant-banner"
+    <header class="py-5 mb-5 resraurant-banner border border-secondary rounded bg-light"
         style="background-image: url('/restaurant/image/{{restaurant.id}}'); background-repeat: no-repeat; background-size: contain; background-position: center;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
@@ -47,10 +47,10 @@
                         </address>
                         <address>
                             <abbr title="Phone">Phone number:</abbr>
-                            {{restaurant.phone}}
+                            {{formatNumber restaurant.phone}}
                             <br>
-                            <abbr title="Email">Website:</abbr>
-                            <a href="{{restaurant.website}}">{{restaurant.website}}</a>
+                            <abbr title="Website">Website:</abbr>
+                            <a href="https://{{restaurant.website}}" target="_blank">{{restaurant.website}}</a>
                         </address>
                         <div class="col-sm-6 p-0">
                             <div>

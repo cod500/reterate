@@ -33,6 +33,11 @@ const getPrev = (array) =>{
 const formatDate = (date) =>{
     return moment(date).format("MMMM Do YYYY")
    
+};
+
+const formatNumber = (phone) =>{
+    let phoneNumber = phone.replace(/(\d\d\d)(\d\d\d)(\d\d\d\d)/, "($1)$2-$3");
+    return phoneNumber;
 }
 
-module.exports = {equal, getPages, getNext, getPrev, formatDate};
+module.exports = {equal, getPages, getNext, getPrev, formatDate, formatNumber};

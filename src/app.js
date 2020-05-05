@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const passport = require('passport');
 const flash = require('connect-flash');
-const {equal, getPages, getNext, getPrev, formatDate} = require('../helpers/hbs');
+const {equal, getPages, getNext, getPrev, formatDate, formatNumber} = require('../helpers/hbs');
 
 const path = require('path');
 
@@ -25,7 +25,8 @@ app.engine('handlebars', hbs({
     getPages,
     getNext,
     getPrev,
-    formatDate
+    formatDate,
+    formatNumber
   }
 }));
 app.set('view engine', 'handlebars');
