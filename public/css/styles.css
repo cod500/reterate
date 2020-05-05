@@ -27,8 +27,7 @@ body {
       rgba(0, 0, 0, .2)),
       url('../images/plate.jpg') 50% / cover fixed;
     height: 100%;
-    width:100%
-    padding: 1.5em;
+    width:100%;
   }
 
   .resraurant-banner {

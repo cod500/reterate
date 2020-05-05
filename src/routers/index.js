@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-//Load Company model
+//Load Restaurant model
 const Restaurant = require('../models/restaurant');
 
 router.get('/', async (req, res) => {

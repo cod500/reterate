@@ -6,7 +6,7 @@ const { auth, notGuest } = require('../../config/auth');
 const multer = require('multer');
 const router = express.Router();
 
-//Load company model
+//Load restaurant model
 const Restaurant = require('../models/restaurant');
 const Rating = require('../models/rating');
 
@@ -113,26 +113,26 @@ router.get('/restaurant/sort/:id/:method', async (req, res) => {
 
     try {
         if (ObjectId.isValid(req.params.id)) {
-            const company = await Restaurant.findOne({ _id: req.params.id });
+            const restaurant = await Restaurant.findOne({ _id: req.params.id });
 
             if (req.params.method === 'highest') {
                 const ratings = await Rating.find({ restaurant: req.params.id }).populate('user').sort({ rating: -1 });
 
                 res.render('restaurants/single-restaurant', {
-                    company,
+                    restaurant,
                     ratings
                 });
             } else if (req.params.method === 'lowest') {
                 const ratings = await Rating.find({ restaurant: req.params.id }).populate('user').sort({ rating: 1 });
 
                 res.render('restaurants/single-restaurant', {
-                    company,
+                    restaurant,
                     ratings
                 });
             } else if (req.params.method === 'recent') {
                 const ratings = await Rating.find({ restaurant: req.params.id }).populate('user');
                 res.render('restaurants/single-restaurant', {
-                    company,
+                    restaurant,
                     ratings
                 })
             }
@@ -153,10 +153,10 @@ router.get('/restaurant/sort/:id/:method', async (req, res) => {
 //Get restaurant image
 router.get("/restaurant/image/:id", async (req, res) => {
     try {
-        const company = await Restaurant.findOne({ _id: req.params.id });
+        const restaurant = await Restaurant.findOne({ _id: req.params.id });
 
-        res.set("Content-Type", `${buffertoImage(company.image)}`);
-        res.send(company.image);
+        res.set("Content-Type", `${buffertoImage(restaurant.image)}`);
+        res.send(restaurant.image);
     } catch (e) {
         res.status(404).send(e);
     }
@@ -165,10 +165,10 @@ router.get("/restaurant/image/:id", async (req, res) => {
 //Get Review restaurant page
 router.get('/restaurant/review/:id', auth, async (req, res) => {
     try {
-        const company = await Restaurant.findOne({ _id: req.params.id });
+        const restaurant = await Restaurant.findOne({ _id: req.params.id });
 
         res.render('restaurants/review-page', {
-            company
+            restaurant
         });
     } catch (e) {
         req.send(e);
@@ -193,7 +193,7 @@ router.post('/restaurant/review/:id', auth, upload.single('image'), async (req, 
     const image = req.file == undefined ? null : req.file.buffer;
 
     try {
-        const company = await Restaurant.findOne({ _id: req.params.id });
+        const restaurant = await Restaurant.findOne({ _id: req.params.id });
         const rating = new Rating({
             user: req.user,
             restaurant: req.params.id,
@@ -203,15 +203,15 @@ router.post('/restaurant/review/:id', auth, upload.single('image'), async (req, 
 
         });
 
-        company.ratingNumber.push(req.body.rating);
+        restaurant.ratingNumber.push(req.body.rating);
 
         //Get single rating for restaurant
-        const starRating = getRatingAverage(company.ratingNumber).toFixed(2);
+        const starRating = getRatingAverage(restaurant.ratingNumber).toFixed(2);
 
-        company.rating = starRating;
+        restaurant.rating = starRating;
 
         await rating.save();
-        await company.save();
+        await restaurant.save();
         res.status(200).send();
     } catch (e) {
         res.send(e);
@@ -239,6 +239,8 @@ check('state').not().isEmpty().withMessage('Restaurant must have a state.'),
 check('country').not().isEmpty().withMessage('Restaurant must have a country.')
 ], async (req, res) => {
     const image = req.file == undefined ? null : req.file.buffer;
+    const phone = req.body.phone == undefined ? null : req.body.phone;
+
     let errors = validationResult(req).array();
     if (errors.length > 0) {
         req.session.errors = errors;
@@ -252,6 +254,7 @@ check('country').not().isEmpty().withMessage('Restaurant must have a country.')
                 state: req.body.state,
                 country: req.body.country,
                 website: req.body.website,
+                phone,
                 type: req.body.type,
                 description: req.body.description,
                 image: image

@@ -3,12 +3,12 @@
         <div class="col-12 col-md-8 col-lg-8 col-xl-6">
             <div class="row">
                 <div class="col text-center">
-                    <h1>{{company.name}} Review</h1>
+                    <h1>{{restaurant.name}} Review</h1>
                     <p class="text-h3">Share your opinion</p>
                 </div>
             </div>
-            <form method="POST" action="/restaurant/review/{{company.id}}" enctype="multipart/form-data">
-                <input class="form-control" id="id" value="{{company.id}}" type="hidden">
+            <form method="POST" action="/restaurant/review/{{restaurant.id}}" enctype="multipart/form-data">
+                <input class="form-control" id="id" value="{{restaurant.id}}" type="hidden">
                 <div class="form-group ">
                     <label for="">Rating</label>
                     <div class="col-sm-12" id="star_rating">

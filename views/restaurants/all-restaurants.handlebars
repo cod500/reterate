@@ -1,4 +1,5 @@
 <div class="container page-container">
+	{{#if companies}}
 	<h1 class="text-center">All Restaurants</h1>
 	<label for="sort-restaurants">Sort by:</label>
 	<select id="sort-restaurants">
@@ -36,7 +37,11 @@
 		</div>
 		{{/each}}
 	</div>
+	{{else}}
+	<p class="text-center">Currently No Restaurants</p>
+	{{/if}}
 
+	{{#if companies}}
 	<div class="container text-center">
 		<nav class="" role="navigation">
 
@@ -47,5 +52,7 @@
 			<a class="older-posts" href="/restaurants/{{method}}/?page={{next}}"> {{getNext}}</a>
 		</nav>
 	</div>
+	{{else}}
+	{{/if}}
 
 </div>
