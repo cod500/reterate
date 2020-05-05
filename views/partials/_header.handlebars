@@ -4,9 +4,11 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <i class="fa fa-cutlery fa-2x pr-2"></i>
+  <div class="collapse navbar-collapse mt-3" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+       <li class="nav-item">
+        <i class="fa fa-cutlery fa-2x pr-2"></i>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="/">Home</a>
       </li>
@@ -14,13 +16,17 @@
         <a class="nav-link" href="/restaurants/recent">Restaurants</a>
       </li>
     </ul>
+    <br>
     {{#if user}}
-    <a class="text-dark" href="/restaurant/add"><i class="fa fa-plus-circle fa-2x"></i><a/>
-   <a class="nav-link" href="/user/profile/{{user.id}}"><i class="fa fa-user fa-2x text-warning"></i></a>
-    <a class="nav-link" href="/logout"><button class="btn btn-dark">Log Out</button></a>
+    <a class="text-dark mr-2" href="/restaurant/add"><i class="fa fa-plus-circle fa-2x"></i><a/>
+    <br><br>
+   <a class="mr-2" href="/user/profile/{{user.id}}"><i class="fa fa-user fa-2x text-warning"></i></a>
+   <br><br>
+    <a class="" href="/logout"><button class="btn btn-dark">Log Out</button></a>
     {{else}}
-    <a class="nav-link text-dark" href="/register">Register</a>
-    <a class="nav-link" href="/login"><button class="btn btn-dark">Log In</button></a>
+    <a class="text-dark mr-3" href="/register">Register</a>
+    <br><br>
+    <a class="" href="/login"><button class="btn btn-dark">Log In</button></a>
     {{/if}}
   </div>
 </nav>
