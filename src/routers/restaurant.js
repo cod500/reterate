@@ -243,8 +243,9 @@ check('country').not().isEmpty().withMessage('Restaurant must have a country.')
 
     let errors = validationResult(req).array();
     if (errors.length > 0) {
+        console.log('Im here')
         req.session.errors = errors;
-        res.redirect('/restaurants/add');
+        res.redirect('/restaurant/add');
     } else {
         try {
             const restaurant = new Restaurant({
@@ -254,7 +255,7 @@ check('country').not().isEmpty().withMessage('Restaurant must have a country.')
                 state: req.body.state,
                 country: req.body.country,
                 website: req.body.website,
-                phone,
+                phone: phone,
                 type: req.body.type,
                 description: req.body.description,
                 image: image
