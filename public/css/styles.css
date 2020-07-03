@@ -62,11 +62,11 @@ ul li {
     color: #e68a19;
 }
 
-.nav-item a {
+.navbar a {
     color: #ffffff !important
 }
 
-.nav-item a:hover {
+.navbar a:hover {
     color: #e68a19 !important
 }
 
@@ -257,7 +257,7 @@ figure.restaurant-card ul.contacts li:last-child a {
 }
 
 .review-block-name {
-    margin: 10px 20px 10px;
+    margin: 10px 0 10px;
 }
 
 .review-block a {
