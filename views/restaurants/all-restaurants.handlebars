@@ -1,57 +1,80 @@
 <div class="container page-container">
-	{{#if companies}}
-	<h1 class="text-center">All Restaurants</h1>
-	<label for="sort-restaurants">Sort by:</label>
-	<select id="sort-restaurants">
-		<option>Select...</option>
-		<option>Most Recent</option>
-		<option>Highest Rating</option>
-		<option>Lowest Rating</option>
-	</select>
-	<br><br>
-	<div class="row">
-		{{#each companies}}
-		<div class="col-xl-3 col-lg-3 col-md-4 col-12">
-			<figure class="user-card">
-				{{#if image}}
-				<img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
-				{{else}}
-				<img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
-				{{/if}}
-				<h5>{{name}}</h5>
-				<p class="text-truncate">{{description}}</p>
-				<ul class="contacts">
-					<li>
-						<a href="https://www.google.com/maps/place/{{address}},+{{state}}+{{country}}" target="_blank">
-							{{address}}<br>
-							{{city}}, {{state}}
-						</a>
-					</li>
-				</ul>
-				<div>
-					<span class="star" data-score={{rating}}></span>
-					<a href="/restaurant/sort/{{id}}/recent"><span class="badge badge-pill"></span><button
-							class="btn btn-warning btn-sm">See Reviews</button></span></a>
-				</div>
-			</figure>
-		</div>
-		{{/each}}
-	</div>
-	{{else}}
-	<p class="text-center">Currently No Restaurants</p>
-	{{/if}}
+    <div class="alert alert-info p-3 mb-5 mt-5" role="alert">
+        <h4 class="alert-heading">Customers Rate Your Resturant Online!</h4>
+        <p>We’ll make sure your listing stands out and that your restaurant information is accurately listed with
+            customer ratings.</p>
+        <hr>
+        <p class="mb-0">We update your restaurant information dynamically to customers. Find out what people are saying
+            about your resturant!
+        </p>
+    </div>
 
-	{{#if companies}}
-	<div class="container text-center">
-		<nav class="" role="navigation">
+    {{#if companies}}
+    <h1 class="text-center">All Restaurants</h1>
+    <label for="sort-restaurants">Sort by:</label>
+    <select id="sort-restaurants">
+        <option>Select...</option>
+        <option>Most Recent</option>
+        <option>Highest Rating</option>
+        <option>Lowest Rating</option>
+    </select>
+    <br>
+    <br>
+    <div class="row">
+        {{#each companies}}
+        <div class="col-xl-3 col-lg-3 col-md-4 col-6">
+            <figure class="restaurant-card">
+                {{#if image}}
+                <img src="/restaurant/image/{{ id }}" alt="Milestone Admin" class="profile" id="res-img">
+                {{ else }}
+                <img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
+                {{/if}}
+                <h5>{{ name }}</h5>
+                <p class="text-truncate">{{ description }}</p>
+                <ul class="contacts">
+                    <li>
+                        <a class="text-truncate"
+                            href="https://www.google.com/maps/place/{{ address }},+{{ state }}+{{ country }}"
+                            target="_blank">
+                            {{ address }}<br>
+                            {{ city }},
+                            {{ state }}
+                        </a>
+                    </li>
+                </ul>
+                <div>
+                    <span class="star" data-score={{ rating }}></span>
+                    <a href="/restaurant/sort/{{ id }}/recent">
+                        <span class="badge badge-pill"></span>
+                        <button class="btn btn-sm">See Reviews</button>
+                        </span>
+                    </a>
+                </div>
+            </figure>
+        </div>
+        {{/each}}
+    </div>
+    {{ else }}
+    <p class="text-center">Currently No Restaurants</p>
+    {{/if}}
 
-			<a class="newer-posts" href="/restaurants/{{method}}/?page={{previous}}">{{getPrev}}</a>
+    {{#if companies}}
+    <div class="container text-center">
+        <nav class="" role="navigation">
 
-			<span class="page-number"> &nbsp Page {{page}} of {{getPages companies}} &nbsp</span>
+            <a class="newer-posts" href="/restaurants/{{ method }}/?page={{ previous }}">{{ getPrev }}</a>
 
-			<a class="older-posts" href="/restaurants/{{method}}/?page={{next}}"> {{getNext}}</a>
-		</nav>
-	</div>
-	{{/if}}
+            <span class="page-number">
+                &nbsp Page
+                {{ page }}
+                of
+                {{ getPages companies }}
+                &nbsp</span>
+
+            <a class="older-posts" href="/restaurants/{{ method }}/?page={{ next }}">
+                {{ getNext }}</a>
+        </nav>
+    </div>
+    {{/if}}
 
 </div>

@@ -30,8 +30,8 @@ router.get('/user/profile/:id', async (req, res) => {
         req.session.errors = null;
     }
     try {
-        if(ObjectId.isValid(req.params.id)){
-            const profile = await User.findById(req.params.id );
+        if (ObjectId.isValid(req.params.id)) {
+            const profile = await User.findById(req.params.id);
             const ratings = await Rating.find({ user: req.params.id }).populate('user').populate('restaurant');
 
             res.render('user/profile', {
@@ -39,13 +39,13 @@ router.get('/user/profile/:id', async (req, res) => {
                 ratings,
                 errors
             });
-            
-        }else{
+
+        } else {
             res.render('index/404', {
                 msg: 'User does not exist'
             })
         }
-       
+
 
     } catch (e) {
         res.send(e)
@@ -107,13 +107,6 @@ check('confirm').not().isEmpty().withMessage('Must confirm password').custom((va
 
         const image = req.file == undefined ? null : req.file.buffer;
         let errors = validationResult(req).array();
-
-
-        //Check for user in the database
-        // const user = await User.findOne({ email: req.body.username });
-        // if (user) {
-        //     errors.push({ msg: 'Email already exits' })
-        // }
 
         if (errors.length > 0) {
 

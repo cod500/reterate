@@ -1,11 +1,22 @@
-<form method="POST" action="/register" enctype="multipart/form-data">
+<div class="container">
+    <div class="alert alert-info p-3 mb-5 mt-5" role="alert">
+        <h4 class="alert-heading">Customers Rate Your Resturant Online!</h4>
+        <p>We’ll make sure your listing stands out and that your restaurant information is accurately listed with
+            customer ratings.</p>
+        <hr>
+        <p class="mb-0">We update your restaurant information dynamically to customers. Find out what people are saying
+            about your resturant!
+        </p>
+    </div>
+</div>
+<form method="POST" action="/register" enctype="multipart/form-data" class="mt-2">
     `<div class="form-group">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-md-8 col-lg-8 col-xl-6">
                     <div class="row">
                         <div class="col text-center">
-                            <h1>Register</h1>
+                            <h2>Join Restaurate. It's fast, easy and free.</h2>
                         </div>
                     </div>
                     <div class="row align-items-center">
@@ -26,15 +37,17 @@
                             <input type="password" name="confirm" class="form-control" placeholder="Confirm Password">
                         </div>
                     </div>
-                     <div class="row justify-content-start mt-4">
-                        <div class="col">
+                    <div class="row justify-content-start mt-4">
+                        <div class="col upload">
                             <input type="file" name="image" class="form-control" placeholder="image">
-                            <label for="image"><small>Upload profile image</small></label>
+                            <label for="image">
+                                <small>Upload profile image</small>
+                            </label>
                         </div>
                     </div>
                     <div class="row justify-content-start mt-4">
                         <div class="col">
-                            <input type="submit" class="btn btn-dark mt-4"></input> 
+                            <input type="submit" class="btn mt-4"></input>
                         </div>
                     </div>
                 </div>

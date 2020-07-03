@@ -26,10 +26,10 @@ router.get('/restaurants/:method', async (req, res) => {
     let skip = parseInt(req.query.page);
     let page = 1
 
-    if(skip > 1){
+    if (skip > 1) {
         skip = (skip * 10) - 10;
-        page+=1
-    }else{
+        page += 1
+    } else {
         skip = 0;
     }
 
@@ -84,10 +84,10 @@ router.post('/restaraunt/search', async (req, res) => {
     let skip = parseInt(req.query.page);
     let page = 1
 
-    if(skip > 1){
+    if (skip > 1) {
         skip = (skip * 10) - 10;
-        page+=1
-    }else{
+        page += 1
+    } else {
         skip = 0;
     }
 
@@ -243,7 +243,6 @@ check('country').not().isEmpty().withMessage('Restaurant must have a country.')
 
     let errors = validationResult(req).array();
     if (errors.length > 0) {
-        console.log('Im here')
         req.session.errors = errors;
         res.redirect('/restaurant/add');
     } else {

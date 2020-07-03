@@ -1,23 +1,19 @@
-<div class="container">
+<div class="container-fluid">
     <!-- Header -->
-    <header class="py-5 mb-5 resraurant-banner border border-secondary rounded bg-light"
-        style="background-image: url('/restaurant/image/{{restaurant.id}}'); background-repeat: no-repeat; background-size: contain; background-position: center;">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-lg-12">
-                    <h1 class="display-4 text-white mt-5 mb-2"></h1>
-                    <div class="col-sm-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+    <div class="jumbotron rest-banner mask pattern-3">
+        <h1 class="display-4 logo text-center">{{restaurant.name}}
+        </h1>
+        {{>_search-bar}}
+        <p>Find great businesses around the corner and across the country.</p>
+        <br><br>
+    </div>
 
     <!-- Page Content -->
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-                <a href="" data-target="#info" data-toggle="tab" class="nav-link active">Information</a>
+                <a href="" data-target="#info" data-toggle="tab" class="nav-link
+                    active">Information</a>
             </li>
             <li class="nav-item">
                 <a href="" data-target="#photos" data-toggle="tab" class="nav-link">Photos</a>
@@ -28,75 +24,90 @@
             <div class="tab-pane active" id="info">
                 <div class="row">
                     <div class="col-md-8 mb-5">
-                        <h2 class="font-weight-bold">{{restaurant.name}}</h2>
-                        <small>$$. {{restaurant.type}}</small>
+                        <h2 class="font-weight-bold">{{ restaurant.name }}</h2>
+                        <small>$$.
+                            {{ restaurant.type }}</small>
                         <hr>
-                        <p>{{restaurant.description}}</p>
+                        <p>{{ restaurant.description }}</p>
 
-                        <a class="btn btn-dark btn-lg" href="/restaurant/review/{{restaurant.id}}">Rate this Restaurant
+                        <a class="btn" href="/restaurant/review/{{ restaurant.id
+                            }}">Rate this Restaurant
                             &raquo;</a>
                     </div>
                     <div class="col-md-4 mb-5">
                         <h2 class="font-weight-bold">Contact Us</h2>
+                        <small>* Listing up to date</small>
                         <hr>
                         <address>
-                            <strong>{{restaurant.name}}</strong>
-                            <br>{{restaurant.address}}
-                            <br>{{restaurant.city}}, {{restaurant.state}}, {{restaurant.country}}
-                            <br>
-                        </address>
+                            <strong>{{ restaurant.name }}</strong>
+                            <br>{{ restaurant.address }}
+                            <br>{{ restaurant.city }},
+                            {{ restaurant.state }},
+                            {{ restaurant.country }}
+                            <br></address>
                         <address>
                             <abbr title="Phone">Phone number:</abbr>
-                            {{formatNumber restaurant.phone}}
+                            {{ formatNumber restaurant.phone }}
                             <br>
                             <abbr title="Website">Website:</abbr>
-                            <a href="https://{{restaurant.website}}" target="_blank">{{restaurant.website}}</a>
+                            <a href="https://{{ restaurant.website }}" target="_blank">{{ restaurant.website }}</a>
                         </address>
                         <div class="col-sm-6 p-0">
                             <div>
                                 <h4>Rating</h4>
-                                <h4>{{restaurant.rating}}/ 5</h4>
-                                <span class="star" data-score={{restaurant.rating}}></span>
+                                <h4>{{ restaurant.rating }}/ 5</h4>
+                                <span class="star" data-score={{
+                                    restaurant.rating }}></span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="alert alert-info alert-dismissable">
-                    <a class="panel-close close" data-dismiss="alert">×</a>"We Are Offering Take-Out Orders - You Can
+                    <a class="panel-close close" data-dismiss="alert">×</a>"We
+                    Are Offering Take-Out Orders - You Can
                     Also Order From Us with Uber Eats for Delivery!
                     Thank You! We Appreciate Your Business."
                 </div>
                 <hr>
 
-                <h3>{{restaurant.name}} has {{ratings.length}} Reviews</h3>
-                <br><br>
+                <h3>{{ restaurant.name }}
+                    has
+                    {{ ratings.length }}
+                    Reviews</h3>
+                <br>
+                <br>
                 <label for="sort-restaurant">Sort by:</label>
                 <select id="sort-restaurant">
                     <option>Select...</option>
-                    <option class={{restaurant.id}}>Most Recent</option>
-                    <option class='{{restaurant.id}}'>Highest Rating</option>
-                    <option class='{{restaurant.id}}'>Lowest Rating</option>
+                    <option class={{ restaurant.id }}>Most Recent</option>
+                    <option class='{{ restaurant.id }}'>Highest Rating</option>
+                    <option class='{{ restaurant.id }}'>Lowest Rating</option>
                 </select>
-                <br><br>
+                <br>
+                <br>
 
                 {{#each ratings}}
                 <div class="row">
                     <div class="col-sm-3">
-                        <img src="/user/image/{{user.id}}" class="img-user-rating rounded-circle z-depth-2">
-                        <div class="review-block-name"><a href="/user/profile/{{user.id}}">{{user.name}}</a></div>
-                        <div class="review-block-date">{{formatDate date}}<br /></div>
-                    </div>
-                    <div class="col-sm-9">
-                        <div class="review-block-rate">
-                            <span class="star" data-score={{rating}}></span>
+                        <img src="/user/image/{{ user.id }}" class="img-user-rating rounded-circle z-depth-2">
+                        <div class="review-block-name">
+                            <a href="/user/profile/{{ user.id }}">{{ user.name
+                                }}</a>
                         </div>
-                        <div class="review-block-description">{{review}}</div>
+                        <div class="review-block-date">{{ formatDate date }}<br /></div>
+                    </div>
+                    <div class="col-sm-9 review">
+                        <div class="review-block-rate">
+                            <span class="star" data-score={{ rating }}></span>
+                        </div>
+                        <div class="review-block-description">{{ review }}</div>
                         {{#if image}}
-                        <a href="/restaurant/review/image/{{id}}" target="_blank"><img
-                                class="thumbnail img-thumbnail rounded" src="/restaurant/review/image/{{id}}"></a>
+                        <a href="/restaurant/review/image/{{ id }}" target="_blank">
+                            <img class="thumbnail img-thumbnail rounded" src="/restaurant/review/image/{{ id }}"></a>
                         {{/if}}
-                        <div class="mt-2 helpful-{{id}}"><input type="button" class="btn btn-secondary helpful-btn"
-                                id="{{id}}" value="Helpful"></div>
+                        <div class="mt-2 helpful-{{ id }}">
+                            <input type="button" class="btn
+                                    helpful-btn" id="{{ id }}" value="Helpful"></div>
                         <hr>
                     </div>
                 </div>
@@ -110,11 +121,10 @@
                     <div class="row text-center text-lg-left">
                         {{#each ratings}}
                         {{#if image}}
-                        <div class="col-lg-3 col-md-4 col-12">
-                            <a href="/restaurant/review/image/{{id}}" target="_blank" class="d-block mb-4 h-100">
-                                <img class="img-fluid thumbnail img-thumbnail rounded"
-                                    src="/restaurant/review/image/{{id}}">
-                            </a>
+                        <div class="col-lg-3 col-md-4 col-12 review">
+                            <a href="/restaurant/review/image/{{ id }}" target="_blank" class="d-block mb-4 h-100">
+                                <img class="img-fluid thumbnail
+                                        img-thumbnail rounded" src="/restaurant/review/image/{{ id }}"></a>
                         </div>
                         {{/if}}
                         {{/each}}
