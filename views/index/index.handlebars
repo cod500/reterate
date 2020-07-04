@@ -1,90 +1,94 @@
-<div class="jumbotron food-banner mask pattern-3">
-    <h1 class="display-4 logo text-center">Restaurate
-        <i class="fa fa-cutlery"></i>
-    </h1>
-    {{>_search-bar}}
-    <p>Find great businesses around the corner and across the country.</p>
-    <br><br>
-</div>
+<div class="container-fluid">
 
-<div class="container p-0">
-    <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 box-shadow main-cards">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Add Restaurant</h4>
-            </div>
-            <div class="card-body d-flex flex-column">
-                <h1 class="card-title">
-                    <img src="/images/cafe-chicken.png" alt="">
-                    <small class="text-muted"></small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>Add a New Restaurant Listing.
-                    </li>
-                    <li>Be the First to Write a Review!</li>
-                </ul>
-                <a href="/restaurant/add">
-                    <button type="button" class="align-self-end btn block-btn" style="margin-top: auto;">Add New
-                        Restaurant</button>
-                </a>
-            </div>
-        </div>
-        <div class="card mb-4 box-shadow main-cards">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">View All</h4>
-            </div>
-            <div class="card-body d-flex flex-column">
-                <h1 class="card-title">
-                    <img src="/images/cafe-pizza.png" alt="">
-                    <small class="text-muted"></small>
-                </h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>View All Current Restaurant Listings.</li>
-                    <li>Rate and Review Restaurant Listings.</li>
-                </ul>
-                <a href="/restaurants/recent">
-                    <button class="btn block-btn">Restaurants to Rate</button>
-                </a>
-            </div>
-        </div>
+    <div class="jumbotron food-banner mask pattern-3">
+        <h1 class="display-4 logo text-center">Restaurate
+            <i class="fa fa-cutlery"></i>
+        </h1>
+        {{>_search-bar}}
+        <p>Find great businesses around the corner and across the country.</p>
+        <br><br>
     </div>
-    <br><br>
-</div>
 
-<div class="container-fluid company-container">
-    <h4 class="text-center">Recently Added Restaurants</h4>
-    <br><br>
-    <div class="row">
-        {{#each companies}}
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
-            <figure class="restaurant-card">
-                {{#if image}}
-                <img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
-                {{else}}
-                <img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
-                {{/if}}
-                <h5>{{name}}</h5>
-                <p class="text-truncate">{{description}}</p>
-                <ul class="contacts">
-                    <li>
-                        <a href="https://www.google.com/maps/place/{{address}},+{{state}}+{{country}}" target="_blank">
-                            {{address}}<br>
-                            {{city}},
-                            {{state}}
-                        </a>
-                    </li>
-                </ul>
-                <div>
-                    <span class="star" data-score={{rating}}></span>
-                    <a href="/restaurant/sort/{{id}}/recent">
-                        <span class="badge badge-pill"></span>
-                        <button class="btn btn-sm block-btn">See Reviews</button>
-                        </span>
+    <div class="container p-0">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 box-shadow main-cards">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Add Restaurant</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h1 class="card-title">
+                        <img src="/images/cafe-chicken.png" alt="">
+                        <small class="text-muted"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>Add a New Restaurant Listing.
+                        </li>
+                        <li>Be the First to Write a Review!</li>
+                    </ul>
+                    <a href="/restaurant/add">
+                        <button type="button" class="align-self-end btn block-btn" style="margin-top: auto;">Add New
+                            Restaurant</button>
                     </a>
                 </div>
-
-            </figure>
+            </div>
+            <div class="card mb-4 box-shadow main-cards">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">View All</h4>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <h1 class="card-title">
+                        <img src="/images/cafe-pizza.png" alt="">
+                        <small class="text-muted"></small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>View All Current Restaurant Listings.</li>
+                        <li>Rate and Review Restaurant Listings.</li>
+                    </ul>
+                    <a href="/restaurants/recent">
+                        <button class="btn block-btn">Restaurants to Rate</button>
+                    </a>
+                </div>
+            </div>
         </div>
-        {{/each}}
+        <br><br>
+    </div>
+
+    <div class="container-fluid company-container">
+        <h4 class="text-center">Recently Added Restaurants</h4>
+        <br><br>
+        <div class="row">
+            {{#each companies}}
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                <figure class="restaurant-card">
+                    {{#if image}}
+                    <img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
+                    {{else}}
+                    <img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
+                    {{/if}}
+                    <h5>{{name}}</h5>
+                    <p class="text-truncate">{{description}}</p>
+                    <ul class="contacts">
+                        <li>
+                            <a href="https://www.google.com/maps/place/{{address}},+{{state}}+{{country}}"
+                                target="_blank">
+                                {{address}}<br>
+                                {{city}},
+                                {{state}}
+                            </a>
+                        </li>
+                    </ul>
+                    <div>
+                        <span class="star" data-score={{rating}}></span>
+                        <a href="/restaurant/sort/{{id}}/recent">
+                            <span class="badge badge-pill"></span>
+                            <button class="btn btn-sm block-btn">See Reviews</button>
+                            </span>
+                        </a>
+                    </div>
+
+                </figure>
+            </div>
+            {{/each}}
+        </div>
     </div>
 </div>
