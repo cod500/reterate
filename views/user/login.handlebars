@@ -1,3 +1,5 @@
+<br>
+{{>_search-bar}}
 <form method="POST" action="/login" class="mt-5">
     <div class="form-group">
         <div class="container">
@@ -10,32 +12,30 @@
                     </div>
                     <div class="row align-items-center mt-4">
                         <div class="col">
-                            <input type="email" name="username"
-                                class="form-control" placeholder="Email">
+                            <input type="email" name="username" class="form-control" placeholder="Email">
                         </div>
                     </div>
                     <div class="row align-items-center mt-4">
                         <div class="col">
-                            <input type="password" name="password"
-                                class="form-control" placeholder="Password">
+                            <input type="password" name="password" class="form-control" placeholder="Password">
                         </div>
                     </div>
                     <div class="row justify-content-start mt-4">
                         <div class="col">
                             <input type="submit" class="btn mt-4"></input>
-                        <div class="form-check mt-4">
-                            <label class="form-check-label">
-                                <input type="checkbox" name="remember"
-                                    value="yes" class="form-check-input">
-                                Remember me
-                            </label>
+                            <div class="form-check mt-4">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="remember" value="yes" class="form-check-input">
+                                    Remember me
+                                </label>
+                            </div>
                         </div>
                     </div>
+                    <br>
+                    <a class="float-left" href="/register">Sign Up</a>
+                    <a class="float-right" href="/reset">Forgot Your Password?</a>
                 </div>
-                <br>
-                <a class="float-left" href="/register">Sign Up</a>
-                <a class="float-right" href="/reset">Forgot Your Password?</a>
             </div>
         </div>
     </div>
-</div></form>
+</form>

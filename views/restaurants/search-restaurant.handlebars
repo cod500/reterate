@@ -1,4 +1,6 @@
 <div class="container page-container">
+    <br>
+    {{>_search-bar}}
     <div class="alert alert-info p-3 mb-5 mt-5" role="alert">
         <h4 class="alert-heading">Customers Rate Your Resturant Online!</h4>
         <p>We’ll make sure your listing stands out and that your restaurant information is accurately listed with
@@ -20,7 +22,7 @@
                 {{ else }}
                 <img src="/images/res-holder.jpg" alt="Milestone Admin" class="profile" id="res-img">
                 {{/if}}
-                <h5>{{ name }}</h5>
+                <h5 class="text-nowrap">{{ name }}</h5>
                 <p class="text-truncate">{{ description }}</p>
                 <ul class="contacts">
                     <li>

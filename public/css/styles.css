@@ -182,7 +182,6 @@ figure.restaurant-card {
     text-align: center;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
     margin-bottom: 50px;
-    white-space: nowrap;
 }
 
 figure.restaurant-card h5 {
