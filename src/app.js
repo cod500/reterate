@@ -8,7 +8,7 @@ const cookieParser = require('cookie-parser');
 const methodOverride = require('method-override');
 const passport = require('passport');
 const flash = require('connect-flash');
-const {equal, getPages, getNext, getPrev, formatDate, formatNumber} = require('../helpers/hbs');
+const { equal, getPages, getNext, getPrev, formatDate, formatNumber } = require('../helpers/hbs');
 
 const path = require('path');
 
@@ -79,14 +79,14 @@ app.use(indexRouter);
 app.use(userRouter);
 app.use(restaurantRouter);
 
-app.get('/*', (req, res) =>{
+app.get('/*', (req, res) => {
   res.render('index/404', {
-    msg:"Sorry, this page doesn't exist."
+    msg: "Sorry, this page doesn't exist."
   });
 })
 
 
-const port = process.env.PORT
+const port = process.env.PORT || 3000
 app.listen(port, () => {
   console.log(`Connected on port ${port}`)
 })

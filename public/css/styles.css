@@ -1,315 +1,338 @@
 /****** Global styles ******/
 
 * {
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 95%;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 95%;
+  padding: 0;
 }
 
 body {
-    overflow-x: hidden;
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #f5f5f5;
-    position: relative;
-    min-height: calc(100vh);
+  overflow-x: hidden;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f5f5f5;
+  position: relative;
+  min-height: calc(100vh);
 }
 
 .main-body {
-    min-height: calc(100vh - 211px - 58px);
+  min-height: calc(100vh - 211px - 58px);
 }
 
 .container-fluid {
-    padding: 0;
+  padding: 0;
 }
 
-input[type="email"], input[type="text"] {
-    font-family: 'Ubuntu', sans-serif;
+input[type="email"],
+input[type="text"] {
+  font-family: "Ubuntu", sans-serif;
 }
 
-input[type='file'] {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 15px;
-    border-radius: 5px;
+input[type="file"] {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 15px;
+  border-radius: 5px;
+}
+
+.form-control {
+  width: 55% !important;
 }
 
 .btn {
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
-    border-radius: 20px;
-    background-color: #f38e1b;
-    color: #ffffff;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  background-color: #f38e1b;
+  color: #ffffff;
 }
 
 .btn:hover {
-    background-color: #e68a19;
-    color: #ffffff;
+  background-color: #e68a19;
+  color: #ffffff;
 }
 
 a {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
 
 ul li {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 /****** Header navbar ******/
 
 .navbar {
-    background-color: #0068a1;
-    color: #ffffff;
+  background-color: #0068a1;
+  color: #ffffff;
 }
 
 .navbar a:hover {
-    color: #e68a19;
+  color: #e68a19;
 }
 
 .navbar a {
-    color: #ffffff !important
+  color: #ffffff !important;
 }
 
 .navbar a:hover {
-    color: #e68a19 !important
+  color: #e68a19 !important;
 }
 
-.navbar a, button {
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #ffffff;
-    margin: 2px;
+.navbar a,
+button {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffffff;
+  margin: 2px;
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 ul.nav li {
-    text-align: center;
+  text-align: center;
 }
 
 .fas.btn {
-    font-weight: 900;
+  font-weight: 900;
 }
 
 .log-btn {
-    background-color: #f38e1b;
-    color: #f2f2f2;
+  background-color: #f38e1b;
+  color: #f2f2f2;
 }
 
 .log-btn:hover {
-    background-color: #e68a19;
-    color: #f2f2f2;
+  background-color: #e68a19;
+  color: #f2f2f2;
 }
 
 /****** Banner ******/
 
 .food-banner {
-    background: linear-gradient( rgba(0, 0, 0, .2), rgba(0, 0, 0, .3)), url('../images/plate.jpg') 50% / cover fixed;
-    height: 100%;
-    width: 100%;
-    padding: 100px;
-    text-align: center;
-    font-size: 23px;
-    color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url("../images/plate.jpg") 50% / cover fixed;
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+  text-align: center;
+  font-size: 23px;
+  color: #ffffff;
 }
 
 .food-banner p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .logo {
-    font-family: 'Josefin Sans', sans-serif;
-    color: #ffffff;
-    text-shadow: 0px 0px 6px #000
+  font-family: "Josefin Sans", sans-serif;
+  color: #ffffff;
+  text-shadow: 0px 0px 6px #000;
 }
 
 .logo i {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .search-btn {
-    background-color: #f38e1b;
-    color: #f2f2f2;
+  background-color: #f38e1b;
+  color: #f2f2f2;
 }
 
 .search-btn:hover {
-    color: #ffffff;
-    background-color: #e68a19;
+  color: #ffffff;
+  background-color: #e68a19;
 }
 
 .main-cards ul li {
-    font-style: italic;
-    font-size: 300;
+  font-style: italic;
+  font-size: 300;
 }
 
 .main-cards i {
-    color: #0068a1;
+  color: #0068a1;
 }
 
 .block-btn {
-    background-color: #f38e1b;
-    color: #ffffff;
+  background-color: #f38e1b;
+  color: #ffffff;
 }
 
 .block-btn:hover {
-    background-color: #e68a19;
-    color: #ffffff;
+  background-color: #e68a19;
+  color: #ffffff;
 }
 
 /****** Restaurant cards ******/
 
 .company-container {
-    background-color: #ebf8ff;
-    padding: 120px;
+  background-color: #ebf8ff;
+  padding: 120px;
 }
 
 .company-container h4 {
-    padding-bottom: 20px;
+  padding-bottom: 20px;
 }
 
 .card-body {
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, .4);
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .card-body img {
-    width: 100px;
+  width: 100px;
 }
 
 figure.restaurant-card {
-    background: #ffffff;
-    padding: 20px;
-    border-top: 3px solid #f2f2f2;
-    border: 1px solid #e1e5f1;
-    text-align: center;
-    box-shadow: 5px 5px 20px rgba(0, 0, 0, .2);
-    margin-bottom: 50px;
+  background: #ffffff;
+  padding: 20px;
+  border-top: 3px solid #f2f2f2;
+  border: 1px solid #e1e5f1;
+  text-align: center;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
 }
 
 figure.restaurant-card h5 {
-    font-size: 14px;
-    margin-bottom: 20px;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 figure.restaurant-card .profile {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 20px;
-    object-fit: cover;
-    margin-top: -30px;
-    z-index: 5;
-    border: 5px solid #e68a19;
-    border-radius: 5px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  margin-top: -30px;
+  z-index: 5;
+  border: 5px solid #e68a19;
+  border-radius: 5px;
 }
 
 figure.restaurant-card p {
-    margin: 0;
-    padding: 0 0 15px 0;
-    color: #8796af;
-    line-height: 150%;
-    font-size: .85rem;
+  margin: 0;
+  padding: 0 0 15px 0;
+  color: #8796af;
+  line-height: 150%;
+  font-size: 0.85rem;
 }
 
 figure.restaurant-card ul.contacts {
-    margin: 0;
-    padding: 0 0 15px 0;
-    line-height: 150%;
-    font-size: .85rem;
+  margin: 0;
+  padding: 0 0 15px 0;
+  line-height: 150%;
+  font-size: 0.85rem;
 }
 
 figure.restaurant-card ul.contacts li {
-    padding: .2rem 0;
+  padding: 0.2rem 0;
 }
 
 figure.restaurant-card ul.contacts li a {
-    color: #5a99ee;
+  color: #5a99ee;
 }
 
 figure.restaurant-card ul.contacts li a i {
-    min-width: 36px;
-    float: left;
-    font-size: 1rem;
+  min-width: 36px;
+  float: left;
+  font-size: 1rem;
 }
 
 figure.restaurant-card ul.contacts li:last-child a {
-    color: #000;
+  color: #000;
 }
 
 figure.restaurant-card .btn {
-    font-size: 10px;
+  font-size: 10px;
 }
 
 /* end restaurant cards styles */
 
 .user-restaurant-listing {
-    width: 100%;
-    height: 100px;
+  width: 100%;
+  height: 100px;
 }
 
 /****** restaurant page ******/
 
 .rest-banner {
-    background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .3)), url(/images/asian.jpg) center 50% / cover fixed;
-    height: 100%;
-    width: 100%;
-    padding: 100px;
-    text-align: center;
-    font-size: 23px;
-    color: #ffffff;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)),
+    url(/images/asian.jpg) center 50% / cover fixed;
+  height: 100%;
+  width: 100%;
+  padding: 100px;
+  text-align: center;
+  font-size: 23px;
+  color: #ffffff;
 }
 
 .rest-banner p {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .review-block-name {
-    margin: 10px 0 10px;
+  margin: 10px 0 10px;
 }
 
 .review-block a {
-    color: #e68a19;
+  color: #e68a19;
 }
 
 .review img {
-    object-fit: cover;
+  object-fit: cover;
 }
 
 /****** User cards ******/
 
 .img-user-rating {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .thumbnail {
-    width: 200px;
-    height: 200px;
+  width: 200px;
+  height: 200px;
 }
 
 .avatar img {
-    border: 5px solid #ffffff;
-    border-radius: 50px;
-    object-fit: cover;
+  border: 5px solid #ffffff;
+  border-radius: 50px;
+  object-fit: cover;
 }
 
 /****** Star image on review page ******/
 
 #star_rating img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 /****** footer  ******/
 
 .footer-container {
-    background-color: #0068a1;
-    color: #ffffff;
-    bottom: 0;
-    width: 100%;
+  background-color: #0068a1;
+  color: #ffffff;
+  bottom: 0;
+  width: 100%;
 }
 
 .footer-container ul li a {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 .footer-container small {
-    color: #ffffff;
+  color: #ffffff;
+}
+
+@media (max-width: 450px) {
+  .banner-text {
+    display: none;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .food-banner {
+    padding: 15px;
+  }
 }

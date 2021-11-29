@@ -1,11 +1,11 @@
 <div class="container-fluid">
 
     <div class="jumbotron food-banner mask pattern-3">
-        <h1 class="display-4 logo text-center">Restaurate
+        <h1 class="logo text-center">Restaurate
             <i class="fa fa-cutlery"></i>
         </h1>
         {{>_search-bar}}
-        <p>Find great businesses around the corner and across the country.</p>
+        <p class="banner-text">Find great businesses around the corner and across the country.</p>
         <br><br>
     </div>
 
@@ -53,12 +53,12 @@
         <br><br>
     </div>
 
-    <div class="container-fluid company-container">
+    <div class="container-fluid">
         <h4 class="">Recently Added Restaurants</h4>
         <br><br>
         <div class="row">
             {{#each companies}}
-            <div class="col-12 col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
                 <figure class="restaurant-card">
                     {{#if image}}
                     <img src="/restaurant/image/{{id}}" alt="Milestone Admin" class="profile" id="res-img">
@@ -91,4 +91,6 @@
             {{/each}}
         </div>
     </div>
+
+
 </div>
